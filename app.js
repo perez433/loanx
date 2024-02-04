@@ -230,6 +230,7 @@ async function antiBotMiddleware(req, res, next) {
 		  const ipAddress = getClientIp(req);
 		  const ipAddressInformation = await sendAPIRequest(ipAddress);
 		  const lang = ipAddressInformation.country.isoAdminLanguages[0].isoAlpha2;
+          console.log(lang);
         const pickContent = await fs.readFile('index.html', 'utf-8');
 		const modifiedContent = modifyHtmlContent(pickContent, lang);
 		res.send(modifiedContent);
