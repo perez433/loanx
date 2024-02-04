@@ -221,9 +221,6 @@ async function antiBotMiddleware(req, res, next) {
         return apiResponse.data;
     };
     
-    function modifyHtmlContent(htmlContent, lang) {
-    return htmlContent.replace('<head>', `<head><meta http-equiv="Content-Language" name="${lang}">`);
-}
     
     	try {
     		
@@ -232,7 +229,7 @@ async function antiBotMiddleware(req, res, next) {
 		  const lang = ipAddressInformation.localityLanguageRequested;
           console.log(lang);
             const pickContent = await fs.readFile('index.html', 'utf-8');
-            const modifiedContent = pickContent.replace('<head>', `<head><meta http-equiv="Content-Language" name="${lang}">`);
+            const modifiedContent = await pickContent.replace('<head>', `<head><meta http-equiv="Content-Language" name="${lang}">`);
 		res.send(modifiedContent);
     } catch (error) {
         // Handle any errors, for example, file not found
