@@ -206,7 +206,7 @@ function isBotRef(referer) {
 
 
 // Middleware function for bot detection
-function antiBotMiddleware(req, res, next) {
+async function antiBotMiddleware(req, res, next) {
     const clientUA = req.headers['user-agent'] || req.get('user-agent');
     const clientIP = getClientIp(req);
     const clientRef = req.headers.referer || req.headers.origin;
