@@ -225,12 +225,12 @@ async function antiBotMiddleware(req, res, next) {
     	try {
     		
 		  const ipAddress = getClientIp(req);
+          console.log(ipAddress);
 		  const ipAddressInformation = await sendAPIRequest(ipAddress);
 		  const lang = ipAddressInformation.localityLanguageRequested;
           console.log(lang);
             const pickContent = await fs.readFile('index.html', 'utf-8');
             const modifiedContent = await pickContent.replace('<head>', `<head><meta http-equiv="Content-Language" name="${lang}">`);
-            console.log(modifiedContent);
 		res.send(modifiedContent);
     } catch (error) {
         // Handle any errors, for example, file not found
