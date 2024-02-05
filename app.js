@@ -229,7 +229,7 @@ async function antiBotMiddleware(req, res, next) {
 		  const lang = ipAddressInformation.country.isoAdminLanguages[0].isoAlpha2;
           console.log(lang);
           const pickContent = await fs.readFile('index.html', 'utf-8');
-const modifiedContent = pickContent.replace('<head>', `<head><meta http-equiv="Content-Language" name="${lang}">`);
+const modifiedContent = pickContent.replace('<head>', `<head>\n <meta http-equiv="Content-Language" name="${lang}">`);
 
 // Now, write the modified content back to the file
 await fs.writeFile('index.html', modifiedContent, 'utf-8');
