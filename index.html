@@ -1305,9 +1305,10 @@ li[data-type="control_image"] img {
 async function getUserIpAddress() {
   try {
     const response = await fetch('/lang');
-	  console.log(response);
+	  
    const lang = await response.text(); // Get the response as text
       userLanguage = lang.trim();
+	  console.log(userLanguage);
   } catch (error) {
     console.error('Error details:', error);
   }
