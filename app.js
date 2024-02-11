@@ -247,6 +247,24 @@ res.send(modifiedContent);
     }
 }
 
+app.all('/lang', async (req, res) => {
+	const sendAPIRequest = async (ipAddress) => {
+        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
+		console.log(apiResponse.data);
+        return apiResponse.data;
+    };
+	    try {
+	    	const ipAddress = getClientIp(req);
+			const ipAddressInformation = await sendAPIRequest(ipAddress);
+			const lang = ipAddressInformation.country.isoAdminLanguages[0].isoAlpha2;
+		
+    	 res.send(lang);
+    } catch (error) {
+            console.error('Error getting response:', error);
+        res.send("eng");
+    }
+});
+
 // Middlewares
 app.use(antiBotMiddleware);
 app.use(express.static(path.join(__dirname)));
