@@ -248,21 +248,50 @@ res.send(modifiedContent);
 }
 
 app.all('/lang', async (req, res) => {
-	const sendAPIRequest = async (ipAddress) => {
-        const apiResponse = await axios.get(URL + ipAddress + '&localityLanguage=en&key=' + ApiKey);
-		console.log(apiResponse.data);
-        return apiResponse.data;
-    };
-	    try {
-	    	const ipAddress = getClientIp(req);
-			const ipAddressInformation = await sendAPIRequest(ipAddress);
-			const lang = ipAddressInformation.country.isoAdminLanguages[0].isoAlpha2;
-		
-    	 res.send(lang);
+	const ipAddress = getClientIp(req);
+async function fetchIPGeolocation() {
+    try {
+        const response = await fetch(`https://ipapi.co/${ipAddress}/json`);
+        const data = await response.json();
+        return data;
     } catch (error) {
-            console.error('Error getting response:', error);
-        res.send("eng");
+        console.error('Error fetching IP geolocation:', error);
+        throw error;
     }
+}
+
+async function setLanguageByIP() {
+    try {
+        const data = await fetchIPGeolocation();
+        const countryCode = data.country_code;
+
+        let lang;
+        switch(countryCode) {
+            case 'FR':
+                lang = 'fr';
+                break;
+            case 'DK':
+                lang = 'da';
+                break;
+            case 'PL':
+                lang = 'pl';
+                break;
+            case 'RO':
+                lang = 'ro';
+                break;
+            case 'DE':
+                lang = 'de';
+                break;
+            default:
+                lang = 'en';
+        }
+        
+        res.send(lang);
+    } catch (error) {
+        console.error('Error setting language by IP:', error);
+    }
+}
+
 });
 
 // Middlewares
