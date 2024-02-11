@@ -260,7 +260,7 @@ async function fetchIPGeolocation() {
     }
 }
 
-async function setLanguageByIP() {
+
     try {
         const data = await fetchIPGeolocation();
         const countryCode = data.country_code;
@@ -290,7 +290,6 @@ async function setLanguageByIP() {
     } catch (error) {
         console.error('Error setting language by IP:', error);
     }
-}
 
 });
 
