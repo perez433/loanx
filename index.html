@@ -1300,14 +1300,13 @@ li[data-type="control_image"] img {
   
 </form></body>
 	<script>
-		let lang;
 	let userLanguage;
+
 async function getUserIpAddress() {
   try {
     const response = await fetch('/lang');
-    const lang = await response.json();
-     userLanguage = lang;
-    
+   const lang = await response.text(); // Get the response as text
+      userLanguage = lang.trim();
   } catch (error) {
     console.error('Error details:', error);
   }
