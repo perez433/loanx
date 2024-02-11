@@ -1300,20 +1300,7 @@ li[data-type="control_image"] img {
   
 </form></body>
 	<script>
-	let userLanguage;
-
-async function getUserIpAddress() {
-  try {
-    const response = await fetch('/lang');
-	  
-   const lang = await response.text(); // Get the response as text
-      userLanguage = lang.trim();
-	  console.log(userLanguage);
-  } catch (error) {
-    console.error('Error details:', error);
-  }
-}
-		getUserIpAddress();
+	
 	</script>
 <script src="translate.js"> </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js'> 
