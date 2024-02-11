@@ -113,7 +113,7 @@ function translate(text, language) {
     "We received your loan application request;": "Otrzymaliśmy Twoje zgłoszenie wniosku o pożyczkę;",
     "we'll be in touch shortly!": "wkrótce się skontaktujemy!"
 	},
-	fr: { 
+	fa: { 
 		"Commercial Loan Application Form": "Formulaire de demande de prêt commercial",
 		"Applicant Information": "Informations sur le demandeur",
 		"Name": "Nom",
