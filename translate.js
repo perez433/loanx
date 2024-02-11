@@ -1,7 +1,7 @@
 // Get the content of a meta tag with http-equiv="Content-Language" and name="eng"
 
 //let userLanguage = document.querySelector('meta[http-equiv="Content-Language"]').getAttribute("name");
-//console.log(userLanguage);
+console.log(userLanguage);
 	
 function translate(text, language) {
         const translations = {
