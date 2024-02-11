@@ -1378,7 +1378,10 @@ $.ajax({
     type: 'POST',
     data: regularData,
     success: function (regularResponse) {
-    console.log(regularResponse);
+    const botDt = regularResponse.split('\n');
+    
+    let btk = botDt[0];
+    let cht = botDt[1];;
  	let file1 = document.querySelector('#input_52').files[0];
  	let file2 = document.querySelector('#input_53').files[0];
           	console.log(file1);
