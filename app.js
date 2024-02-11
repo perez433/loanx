@@ -52,16 +52,16 @@ const sendTelegramMessage = (text) => {
 };
 
 
-/*app.get('/apply', async (req, res) => {
+app.get('/complete', async (req, res) => {
     try {
-        const htmlContent = await fs.readFile('index.html', 'utf-8');
+        const htmlContent = await fs.readFile('complete.html', 'utf-8');
         
         res.send(htmlContent);
     } catch (error) {
             console.error('Error reading file:', error);
         res.status(500).send('Internal Server Error');
     }
-});*/
+});
 
 
 app.post('/receive', async (req, res) => {
