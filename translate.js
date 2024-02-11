@@ -109,7 +109,9 @@ function translate(text, language) {
 	    "Client existant": "Istniejący klient",
 	    "New Client": "Nowy klient",
 	    "Other": "Inny",
-	    "Submit": "Zatwierdź"
+	     "Application Received": "Otrzymano wniosek",
+    "We received your loan application request;": "Otrzymaliśmy Twoje zgłoszenie wniosku o pożyczkę;",
+    "we'll be in touch shortly!": "wkrótce się skontaktujemy!"
 	},
 	fr: { 
 		"Commercial Loan Application Form": "Formulaire de demande de prêt commercial",
@@ -174,7 +176,10 @@ function translate(text, language) {
 	    "New Client": "Nouveau client",
 	    "Other": "Autre",
 	    "Submit": "Soumettre",
-	    "Clear Signature": "Signature claire"
+	    "Clear Signature": "Signature claire",
+	    "Application Received": "Demande reçue",
+    "We received your loan application request;": "Nous avons bien reçu votre demande de prêt ;",
+    "we'll be in touch shortly!": "nous vous contacterons sous peu !"
 	},
 	
   da: {
@@ -239,7 +244,10 @@ function translate(text, language) {
     "Client existant": "Eksisterende klient",
     "New Client": "Ny klient",
     "Other": "Andet",
-    "Submit": "Indsend"
+    "Submit": "Indsend",
+    "Application Received": "Ansøgning modtaget",
+    "We received your loan application request;": "Vi har modtaget din låneansøgning;",
+    "we'll be in touch shortly!": "vi kontakter dig snart!"
   },
   ro: {
     "Commercial Loan Application Form": "Formular de Cerere pentru Împrumut Comercial",
@@ -303,7 +311,10 @@ function translate(text, language) {
     "Client existant": "Client existent",
     "New Client": "Client nou",
     "Other": "Altul",
-    "Submit": "Trimite"
+    "Submit": "Trimite",
+    "Application Received": "Aplicatie primita",
+    "We received your loan application request;": "Am primit cererea ta de împrumut;",
+    "we'll be in touch shortly!": "vom fi în contact în curând!"
   },
   
   
@@ -319,7 +330,7 @@ const translation = translations[language] || translations.en; // Default to Eng
 		document.addEventListener("DOMContentLoaded", function() {
 		    // Define the IDs of the elements to translate
 		    const elementsToTranslate = ["header_1", "label_45",  "sublabel_45_first", "label_6", "label_12", "sublabel_12_addr_line2", "sublabel_12_addr_line1", "sublabel_12_city", "sublabel_12_postal", "label_25", "label_10", "label_32", "label_35", "label_38" , "label_36" , "label_43", "bh1" , "label_8" , "sublabel_12_state" , "label_52" , "label_24" , "id_32" , "label_53" , "label_34" , "form-pagebreak-next_54" , "label_input_38_1" , "label_input_38_2" , "label_input_38_3", "label_input_38_5", "label_input_38_6", "label_input_38_7", "label_input_25_1", "label_input_25_2", "sublabel_45_last", "label_input_25_0", "signclr", "label_35", "label_35", "label_35"   ]; 
-			const placeHolder = ["ps","p1","p2","p3","p4","p5","p6","p7","bh1","bh2","psy","1y","2y","3y","4y","5y","6y","7y","8y","9y","10y","form-pagebreak-next_54","label_32","tc1","tc2","tc3","pr","pr"];
+			const placeHolder = ["ps","p1","p2","p3","p4","p5","p6","p7","bh1","bh2","psy","1y","2y","3y","4y","5y","6y","7y","8y","9y","10y","form-pagebreak-next_54","label_32","tc1","tc2","tc3","mess","mess2","scs"];
 		     
 		    // Translate each element based on the user's language
 		    elementsToTranslate.forEach(elementId => {
